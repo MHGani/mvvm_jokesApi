@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+   >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.mvvm_jokesapi.viewmodel.JokesDetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SecondFragment">
+
+        <TextView
+            android:id="@+id/id_type_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:padding="1dp"
+            android:textColor="#de000000"
+            android:textSize="15sp"
+            android:text="@{`ID: `+viewModel.selectedProperty.id}"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="ID"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:padding="1dp"
+            android:textColor="#de000000"
+            android:textSize="15sp"
+            android:text="@{`Joke : `+ viewModel.selectedProperty.joke}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_type_text"
+            tools:text="Joke" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
